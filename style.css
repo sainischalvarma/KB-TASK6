@@ -1,0 +1,95 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #aaa;
+}
+
+/* Gallery Grid Layout */
+.gallery-container {
+    display: grid;
+    /* Desktop: 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the box without stretching */
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect: Zoom Image */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Caption Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%); /* Start hidden below */
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0); /* Slide up on hover */
+}
+
+/* RESPONSIVENESS */
+
+/* Tablet: 2 Columns */
+@media (max-width: 992px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 Column */
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
