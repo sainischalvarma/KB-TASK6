@@ -1,50 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Image Gallery</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <h1>Travel Photography Portfolio</h1>
-        <p>Explore the world through my lens</p>
+        <div class="header-top">
+            <div>
+                <h1>Travel Photography Portfolio</h1>
+                <p>Explore the world through my lens</p>
+            </div>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="mountain">Mountains</button>
+            <button class="filter-btn" data-filter="water">Water</button>
+            <button class="filter-btn" data-filter="forest">Forest</button>
+            <button class="filter-btn" data-filter="snow">Snow</button>
+        </div>
+
+        <!-- Image Counter -->
+        <p class="image-counter" id="imageCounter">Showing 9 photos</p>
     </header>
 
-    <div class="gallery-container">
+    <!-- Masonry Gallery -->
+    <div class="gallery-container masonry" id="gallery">
+
         <!-- Image 1 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Mountain Landscape">
+        <div class="gallery-item" data-category="mountain" data-index="0">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Mountain Landscape" loading="lazy">
             <div class="overlay">Mountain View</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
         </div>
+
         <!-- Image 2 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80" alt="Serene Lake">
+        <div class="gallery-item" data-category="water" data-index="1">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80" alt="Serene Lake" loading="lazy">
             <div class="overlay">Serene Lake</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
         </div>
+
         <!-- Image 3 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80" alt="Forest Path">
+        <div class="gallery-item" data-category="forest" data-index="2">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80" alt="Forest Path" loading="lazy">
             <div class="overlay">Deep Forest</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
         </div>
+
         <!-- Image 4 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80" alt="Ocean Sunset">
+        <div class="gallery-item" data-category="water" data-index="3">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80" alt="Ocean Sunset" loading="lazy">
             <div class="overlay">Ocean Breeze</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
         </div>
+
         <!-- Image 5 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=600&q=80" alt="Rolling Hills">
+        <div class="gallery-item" data-category="mountain" data-index="4">
+            <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=600&q=80" alt="Rolling Hills" loading="lazy">
             <div class="overlay">Green Valleys</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
         </div>
+
         <!-- Image 6 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Snowy Peaks">
+        <div class="gallery-item" data-category="snow" data-index="5">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Snowy Peaks" loading="lazy">
             <div class="overlay">Snowy Peaks</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
         </div>
+
+        <!-- Image 7 -->
+        <div class="gallery-item" data-category="water" data-index="6">
+            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=600&q=80" alt="Waterfall" loading="lazy">
+            <div class="overlay">Hidden Waterfall</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
+        </div>
+
+        <!-- Image 8 -->
+        <div class="gallery-item" data-category="forest" data-index="7">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" alt="Misty Forest" loading="lazy">
+            <div class="overlay">Misty Forest</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
+        </div>
+
+        <!-- Image 9 -->
+        <div class="gallery-item" data-category="snow" data-index="8">
+            <img src="https://images.unsplash.com/photo-1491555103944-7c647fd857e6?auto=format&fit=crop&w=600&q=80" alt="Winter Landscape" loading="lazy">
+            <div class="overlay">Winter Wonderland</div>
+            <button class="like-btn" title="Like"><i class="fa-regular fa-heart"></i></button>
+        </div>
+
     </div>
 
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+        <button class="lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
