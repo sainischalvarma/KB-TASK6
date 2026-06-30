@@ -1,3 +1,5 @@
+git commit -m "Add lightbox, filters, dark/light mode, like button, masonry layout"
+
 const gallery = document.getElementById('gallery');
 const items = () => [...gallery.querySelectorAll('.gallery-item:not(.hidden)')];
 const allItems = () => [...gallery.querySelectorAll('.gallery-item')];
